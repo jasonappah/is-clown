@@ -1,14 +1,18 @@
 {
   "name": "is-clown",
   "version": "1.0.0",
-  "main": "index.js",
+  "main": "index.ts",
   "license": "MIT",
   "dependencies": {
     "axios": "^0.21.4",
     "dotenv": "^10.0.0",
     "form-data": "^4.0.0",
     "formdata-node": "^4.0.1",
-    "node-blob": "^0.0.2",
-    "puppeteer": "^10.2.0"
+    "puppeteer": "^10.2.0",
+    "ts-node": "^10.2.1",
+    "typescript": "^4.4.2"
+  },
+  "scripts": {
+    "start": "ts-node index.ts"
   }
 }

@@ -1,12 +1,13 @@
+import { ElementHandle } from "puppeteer";
+
 (async () => {
 	const axios = require("axios").default;
 	const puppeteer = require("puppeteer");
 	const FormData = require("form-data");
-	const Blob = require("node-blob");
 	require("dotenv").config();
 
-	const hide = (el) => {
-		el.evaluate((e: HTMLElement) => (e.style.display = "none"));
+	const hide = (el: ElementHandle) => {
+		el.evaluate((e) => (e.style.display = "none"));
 	};
 	const { HAC_USER, HAC_PASS, HAC_URL, CLOWN_UID, SLACK_TOKEN, CLOWN_CHANNEL } =
 		process.env;
