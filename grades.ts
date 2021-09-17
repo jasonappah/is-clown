@@ -1,6 +1,6 @@
 import { ElementHandle } from "puppeteer";
 
-(async () => {
+export default async () => {
 	const axios = require("axios").default;
 	const puppeteer = require("puppeteer");
 	const FormData = require("form-data");
@@ -35,7 +35,7 @@ import { ElementHandle } from "puppeteer";
 		const img: Buffer = await page.screenshot({ type: "png" });
 
 		const fd = new FormData();
-		const filename = "grades.png"
+		const filename = "grades.png";
 		fd.append("file", img, filename);
 		fd.append("initial_comment", `lmaooooo look at <@${CLOWN_UID}>'s grades`);
 		fd.append("filetype", "png");
@@ -54,10 +54,4 @@ import { ElementHandle } from "puppeteer";
 	} finally {
 		await browser.close();
 	}
-})();
-
-async function wait(ms: number) {
-	return new Promise((res) => {
-		setTimeout(res, ms);
-	});
-}
+};
