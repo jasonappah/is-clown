@@ -6,7 +6,7 @@ export default async () => {
 	const FormData = require("form-data");
 	require("dotenv").config();
 
-	const hide = (el: ElementHandle) => {
+	const hide = (el: ElementHandle<HTMLElement>) => {
 		el.evaluate((e) => (e.style.display = "none"));
 	};
 	const { HAC_USER, HAC_PASS, HAC_URL, CLOWN_UID, SLACK_TOKEN, CLOWN_CHANNEL } =
