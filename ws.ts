@@ -10,7 +10,7 @@ fastify.get("/", (_, reply) => {
 });
 
 // Run the server!
-fastify.listen(process.env.PORT || 8080, function (err, address) {
+fastify.listen(process.env.PORT || 8080, "0.0.0.0", function (err, address) {
 	if (err) {
 		fastify.log.error(err);
 		process.exit(1);
