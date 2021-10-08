@@ -27,4 +27,4 @@ RUN yarn
 # Running the app
 
 ENV NODE_ENV production
-CMD "yarn" "run" "cron"
+CMD "yarn" "run" "ws"
