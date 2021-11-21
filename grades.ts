@@ -22,6 +22,7 @@ export default async () => {
 	} = process.env;
 	const browser = await puppeteer.launch({
 		headless: process.env.NODE_ENV === "production",
+		args: ['--disable-dev-shm-usage'],
 	});
 	try {
 		const page = await browser.newPage();

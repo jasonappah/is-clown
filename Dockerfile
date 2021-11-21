@@ -3,7 +3,7 @@
 # Initially based upon:
 # https://github.com/GoogleChrome/puppeteer/blob/master/docs/troubleshooting.md#running-puppeteer-in-docker
 
-FROM node:14
+FROM node:16-slim
 RUN  apt-get update \
      && apt-get install -y wget gnupg ca-certificates procps libxss1 \
      && wget -q -O - https://dl-ssl.google.com/linux/linux_signing_key.pub | apt-key add - \
@@ -22,7 +22,7 @@ RUN  apt-get update \
 COPY . /home/app
 WORKDIR /home/app
 
-RUN yarn
+RUN yarn --prod
 
 # Running the app
 
