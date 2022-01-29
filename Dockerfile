@@ -22,9 +22,9 @@ RUN  apt-get update \
 COPY . /home/app
 WORKDIR /home/app
 
-RUN yarn --prod
+RUN pnpm i --frozen-lockfile
 
 # Running the app
 
 ENV NODE_ENV production
-CMD "yarn" "run" "ws"
+CMD "pnpm" "run" "ws"
